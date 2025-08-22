@@ -92,15 +92,15 @@ Verify via http://<public-ip>.
 
 Create a 5 GB EBS volume in the same AZ as your EC2.
 
-Attach it to your Linux EC2 instance (/dev/xvdf).
+Attach it to your Linux EC2 instance (/dev/sdb).
 
 
 Linux Setup:
 
 lsblk   # verify new disk
-sudo mkfs -t ext4 /dev/xvdf
+sudo mkfs -t ext4 /dev/sdb
 sudo mkdir /data
-sudo mount /dev/xvdf /data
+sudo mount /dev/sdb /data
 echo "/dev/xvdf /data ext4 defaults,nofail 0 2" | sudo tee -a /etc/fstab
 
 Windows Setup:
